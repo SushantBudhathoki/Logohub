@@ -111,7 +111,7 @@ height: 400px;
     margin: 5px;
     position: relative;
     height: 350px;
-    max-width: 350px;
+    width: 350px;
     top: 30px ;
     z-index: 100;
     animation: slideInFromRight 1s ease-in;
@@ -388,7 +388,7 @@ flex-wrap: nowrap;
         justify-self: center;     
     }
     .showcase-form.card{
-        max-width: 350px;
+        width: 350px;
     }
     .stats h2{
         width: 100%;
