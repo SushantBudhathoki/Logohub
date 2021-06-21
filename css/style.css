@@ -42,9 +42,7 @@ header{
 }
 header .flex{
     justify-content: space-between;
-    
 }
-
 .container .logo{
   font-family: satisfy;  
   font-weight: normal;
@@ -60,6 +58,8 @@ header ul{
     margin:0px;
     padding: 0px;
     display: flex;
+    justify-content: center;
+    align-items:center;
 }
 .menu li a{
 
@@ -108,9 +108,9 @@ height: 400px;
 
 }
 .showcase-form{
+    margin: 5px;
     position: relative;
     height: 350px;
-    min-width: 300px;
     max-width: 350px;
     top: 30px ;
     z-index: 100;
@@ -213,6 +213,12 @@ height: 400px;
 }
 .footer .grid{
     grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+.footer .grid>div{
+    justify-self: center;
+    align-self: center;
 }
 .footer h3{
     font-size: 20px;
@@ -224,14 +230,17 @@ height: 400px;
     padding: 0;
     list-style: none;
 }
-
 .footer ul li:hover a {
     border-bottom: 1px solid #fff;
 }
 .footer i{
     margin:0px 6px;
 }
-
+a.social-icon:hover .fab{
+    background: linear-gradient(to right, rgb(138, 35, 135), rgb(233, 64, 87), rgb(242, 113, 33));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 /* animations */
 @keyframes slideInFromLeft{
     0%{
@@ -352,16 +361,9 @@ flex-wrap: nowrap;
     gap: 10px;
 }
 
-
-
-
-
-
-
 /***********media*************/
 @media screen and (max-width:837px)
- {
-    
+ {  
     .showcase .grid,
     .stats .grid,
     .cli .grid,
@@ -385,6 +387,9 @@ flex-wrap: nowrap;
     .showcase-form{
         justify-self: center;     
     }
+    .showcase-form.card{
+        max-width: 350px;
+    }
     .stats h2{
         width: 100%;
     }
@@ -396,20 +401,22 @@ flex-wrap: nowrap;
         grid-row: 1 ;
     }
     .footer .container{
-        margin-left: 20px;
-        gap: 20px;
+        margin-left: 50px;
     }
-    
+    .footer .grid>div{
+    justify-self: left;
+    }
 }
-
-
 
 /******mobile*******/
 @media screen and (max-width:500px) 
 {
     .header{
         height: auto; 
-    }   
+    }
+    div.container.flex{
+        padding: 10px;
+    }
     nav{
         background-color: rgba(0, 0, 0, 0.2);
     }
@@ -417,29 +424,35 @@ flex-wrap: nowrap;
         padding: 10px 0px;
     }
     .menu li a:hover{
-        color: rgb(47, 32, 88);}
-       
-        
+        color: rgb(47, 32, 88);
+    }    
     header .flex{
         flex-direction:column;
     }
-    
     .showcase{
         height: auto;
+    }
+    .showcase-form.card{
+        width: 280px;
     }
     .showcase-text{
         text-align: center;
         margin: 10px 0;
     }
     .showcase-form{
-        justify-self: center;
-        
+        justify-self: center;    
     }
-   
     .footer .container{
         margin-left: 20px;
     }
-
+    .footer .container>div{
+        justify-self: left;
+    }
     
-
+}
+@media screen and (max-width:300px) 
+{
+    .showcase-form.card{
+        width: 250px;
+    }
 }
